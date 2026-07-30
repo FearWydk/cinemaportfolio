@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Josh Brooks — Cinematographer / Editor</title>
+<meta name="description" content="Cinematography and editing reel of Josh Brooks — framing, movement, pacing, and color for story-first filmmaking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Spline+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E11; --surface:#141A20; --surface-2:#1B232B;
+    --ink:#ECE7DC; --muted:#7E8A94; --line:rgba(236,231,220,.10);
+    --amber:#E7A948; --teal:#46A99C; --maxw:1160px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Spline Sans",system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  ::selection{background:var(--amber);color:#111}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .mono{font-family:"Space Mono",monospace}
+
+  .topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;background:rgba(11,14,17,.72);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .brand{font-family:"Oswald";font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:15px}
+  .brand span{color:var(--amber)}
+  .topnav{display:flex;gap:22px}
+  .topnav a{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.08em;color:var(--muted);
+    text-decoration:none;text-transform:uppercase;transition:color .2s}
+  .topnav a:hover,.topnav a:focus-visible{color:var(--ink)}
+
+  .hero{padding:70px 0 54px}
+  .eyebrow{font-family:"Space Mono",monospace;color:var(--teal);font-size:13px;letter-spacing:.28em;text-transform:uppercase;margin:0 0 18px}
+  h1{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.02em;line-height:.94;
+    font-size:clamp(52px,11vw,128px);margin:0}
+  .tagline{max-width:660px;margin:22px 0 0;color:var(--muted);font-size:clamp(16px,2.1vw,19px)}
+  .tagline strong{color:var(--ink);font-weight:500}
+
+  .frame{position:relative;margin-top:44px;background:#000;border:1px solid var(--line)}
+  .frame .video{position:relative;width:100%;aspect-ratio:16/9;background:var(--surface-2)}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .bracket{position:absolute;width:22px;height:22px;border:2px solid rgba(236,231,220,.5);pointer-events:none;z-index:3}
+  .bracket.tl{top:10px;left:10px;border-right:0;border-bottom:0}
+  .bracket.tr{top:10px;right:10px;border-left:0;border-bottom:0}
+  .bracket.bl{bottom:10px;left:10px;border-right:0;border-top:0}
+  .bracket.br{bottom:10px;right:10px;border-left:0;border-top:0}
+  .fr-label{position:absolute;z-index:3;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;
+    color:rgba(236,231,220,.75);text-transform:uppercase;background:rgba(0,0,0,.35);padding:3px 7px;pointer-events:none}
+  .fr-label.a{top:14px;left:40px}
+  .fr-label.b{top:14px;right:40px;color:var(--amber)}
+  .fr-label.c{bottom:14px;right:40px}
+
+  section.block{padding:66px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin:0 0 12px}
+  .sec-num{font-family:"Space Mono",monospace;color:var(--teal);font-size:13px;letter-spacing:.1em}
+  h2{font-family:"Oswald";font-weight:500;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(26px,4vw,40px);margin:0}
+  .sec-sub{color:var(--muted);font-size:15px;margin:0 0 34px}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .card{background:var(--surface);border:1px solid var(--line)}
+  .card .video{position:relative;width:100%;aspect-ratio:16/9;background:var(--surface-2)}
+  .card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 16px;padding:14px 18px 0;font-family:"Space Mono",monospace;
+    font-size:11px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+  .meta b{color:var(--teal);font-weight:400}
+  .card h3{font-family:"Oswald";font-weight:500;text-transform:uppercase;letter-spacing:.03em;font-size:22px;margin:12px 18px 6px}
+  .card p{margin:0 18px 20px;color:var(--muted);font-size:15px}
+
+  .shorts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .short{background:var(--surface);border:1px solid var(--line);padding:8px}
+  .short .v{position:relative;width:100%;aspect-ratio:9/16;background:var(--surface-2)}
+  .short iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .short .cap{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);
+    padding:8px 4px 2px;text-transform:uppercase;min-height:14px}
+
+  .caps{display:grid;grid-template-columns:1fr 1fr;gap:2px 40px}
+  .cap{padding:22px 0;border-top:1px solid var(--line);display:flex;gap:20px}
+  .cap .k{font-family:"Space Mono",monospace;color:var(--amber);font-size:13px;min-width:34px;padding-top:3px}
+  .cap h4{font-family:"Oswald";font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:19px;margin:0 0 5px}
+  .cap p{margin:0;color:var(--muted);font-size:15px}
+
+  .lead{max-width:560px;color:var(--muted);margin:0 0 26px;font-size:17px}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px}
+  .contact-links a{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:12px 20px;
+    transition:border-color .2s,color .2s}
+  .contact-links a:hover,.contact-links a:focus-visible{border-color:var(--amber);color:var(--amber)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer .mono{font-size:12px;letter-spacing:.08em}
+  a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+  @media(max-width:900px){ .shorts{grid-template-columns:repeat(3,1fr)} }
+  @media(max-width:720px){
+    .grid,.caps{grid-template-columns:1fr}
+    .shorts{grid-template-columns:repeat(2,1fr)}
+    .topnav{display:none}
+    .fr-label.a,.fr-label.c{display:none}
+    .hero{padding:48px 0 40px}
+  }
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Josh <span>Brooks</span></div>
+    <nav class="topnav">
+      <a href="#work">Work</a><a href="#shorts">Shorts</a><a href="#craft">Craft</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="name"></h1>
+      <p class="tagline" id="tagline"></p>
+      <div class="frame">
+        <span class="bracket tl"></span><span class="bracket tr"></span>
+        <span class="bracket bl"></span><span class="bracket br"></span>
+        <span class="fr-label a mono">FEATURED</span>
+        <span class="fr-label b mono">16:9</span>
+        <span class="fr-label c mono">TC 00:00:00:00</span>
+        <div class="video" id="featured"></div>
+      </div>
+    </section>
+
+    <section class="block" id="work">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-num">01</span><h2>Selected Work</h2></div>
+        <p class="sec-sub">Camera and edit across wedding, narrative, and comedy.</p>
+        <div class="grid" id="workGrid"></div>
+      </div>
+    </section>
+
+    <section class="block" id="shorts">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-num">02</span><h2>Shorts</h2></div>
+        <p class="sec-sub">Vertical, short-form cuts.</p>
+        <div class="shorts" id="shortsGrid"></div>
+      </div>
+    </section>
+
+    <section class="block" id="craft">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-num">03</span><h2>Behind the Frame</h2></div>
+        <div class="caps" id="caps" style="margin-top:26px"></div>
+      </div>
+    </section>
+
+    <section class="block" id="contact">
+      <div class="wrap">
+        <div class="sec-head"><span class="sec-num">04</span><h2>Let's make something</h2></div>
+        <p class="lead" id="contactLead"></p>
+        <div class="contact-links" id="contactLinks"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">
+    <span class="mono" id="foot"></span>
+    <span class="mono">Shot &amp; cut by hand.</span>
+  </div></footer>
+
+<script>
+/* ============================================================
+   EDIT THIS BLOCK.
+   Your 18 YouTube videos are already wired in and will play.
+   >>> IMPORTANT: the 6 "work" titles below are my BEST-GUESS
+   pairing of your known credits to your 6 wide videos. Play each
+   one and, if a title doesn't match the video, just move the
+   `id` to the entry it belongs to. Everything else is ready.
+   ============================================================ */
+const CONFIG = {
+  name: "Josh Brooks",
+  eyebrow: "Cinematographer · Editor",
+  tagline: "Framing, movement, and pacing for story-first filmmaking \u2014 bringing a live-action camera and edit sensibility to <strong>animation and beyond</strong>.",
+
+  // Hero video — set to your strongest reel or highlight.
+  featuredId: "JsnG145sfcM",
+
+  // 6 landscape (16:9) videos — VERIFY the id↔title pairing.
+  work: [
+    { id:"JsnG145sfcM", title:"The Curley's Wedding", role:"Co-Cinematographer / Editor", format:"Wedding Film", year:"2025", note:"A cinematic wedding film \u2014 from getting ready to the last dance." },
+    { id:"-26FtlAGZz4", title:"The Blind Date", role:"Cinematographer / Editor", format:"Thesis Film", year:"2023", note:"Bachelor's thesis \u2014 a story of misunderstandings that leads to an impossible encounter." },
+    { id:"LAe6bnUw5wM", title:"Susannah", role:"Editor", format:"Short Film", year:"2022", note:"Cut for rhythm, story, and continuity in post." },
+    { id:"qRjd5bLnJ_M", title:"Akeem Woods \u2014 Behind the Scenes", role:"Editor", format:"BTS / Late Night", year:"2022", note:"On the road to his late-night TV debut. Edited during my KO Comedy internship." },
+    { id:"vWo9l3OXpIo", title:"Ardie Fuqua at the Comedy Cellar", role:"Editor", format:"Stand-up", year:"2022", note:"Set edited during my KO Comedy internship." },
+    { id:"sePaF_iGPF4", title:"Sammy Obeid", role:"Editor", format:"Stand-up", year:"2022", note:"Set edited during my KO Comedy internship." },
+  ],
+
+  // 12 vertical shorts. Add a short caption in "cap" if you want one; leave "" for none.
+  shorts: [
+    { id:"rjZhz3_8TLc", cap:"" },
+    { id:"2zpjnqUgkTs", cap:"" },
+    { id:"2TR7yBrkFLA", cap:"" },
+    { id:"4L6r4fQlY4s", cap:"" },
+    { id:"laAKmD5GmLo", cap:"" },
+    { id:"q-_iEy6ZTus", cap:"" },
+    { id:"niBNxXNhG80", cap:"" },
+    { id:"8h-ovZ2-Z2w", cap:"" },
+    { id:"ZHaAtWQGBPw", cap:"" },
+    { id:"JHnqPXeXY7E", cap:"" },
+    { id:"zeD5ofr5Pr0", cap:"" },
+    { id:"LUL6ylH24rs", cap:"" },
+  ],
+
+  capabilities: [
+    { k:"01", h:"Composition & Staging", p:"Framing, blocking, and lens choice that direct the eye \u2014 instincts that carry straight into layout and camera for animation." },
+    { k:"02", h:"Camera & Movement", p:"Motivated moves, from locked-off precision to handheld energy, chosen to serve the beat." },
+    { k:"03", h:"Editorial & Pacing", p:"Cutting for rhythm, tension, and clarity \u2014 where a story breathes and where it snaps." },
+    { k:"04", h:"Color & Grade", p:"Mood, tone, and continuity built in the grade. Teal-and-orange when it earns it; restraint when it doesn't." },
+    { k:"05", h:"Post & Finishing", p:"Editing, sound, and delivery across Premiere, DaVinci, Final Cut, Audition, and more." },
+  ],
+
+  contactLead: "Available for cinematography, editing, and collaborative filmmaking. The fastest way to reach me is email.",
+  links: {
+    email: "brooks.joshua43@gmail.com",
+    youtube: "https://www.youtube.com/@joshbrooks6575/videos",
+    instagram: "https://www.instagram.com/jbrooksproductions/",
+    linkedin: "https://www.linkedin.com/in/josh-brooks-8a3b16124/",
+  }
+};
+
+/* ---- render ---- */
+const embed = (id) => `<iframe src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1" title="video" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+
+document.getElementById('eyebrow').textContent = CONFIG.eyebrow;
+document.getElementById('name').textContent = CONFIG.name;
+document.getElementById('tagline').innerHTML = CONFIG.tagline;
+document.getElementById('featured').innerHTML = embed(CONFIG.featuredId);
+
+document.getElementById('workGrid').innerHTML = CONFIG.work.map(w => `
+  <article class="card">
+    <div class="video">${embed(w.id)}</div>
+    <div class="meta"><span><b>ROLE</b> ${w.role}</span><span><b>FMT</b> ${w.format}</span><span><b>YR</b> ${w.year}</span></div>
+    <h3>${w.title}</h3>
+    <p>${w.note}</p>
+  </article>`).join('');
+
+document.getElementById('shortsGrid').innerHTML = CONFIG.shorts.map(s => `
+  <div class="short">
+    <div class="v">${embed(s.id)}</div>
+    <div class="cap">${s.cap || ''}</div>
+  </div>`).join('');
+
+document.getElementById('caps').innerHTML = CONFIG.capabilities.map(c => `
+  <div class="cap"><span class="k mono">${c.k}</span><div><h4>${c.h}</h4><p>${c.p}</p></div></div>`).join('');
+
+document.getElementById('contactLead').textContent = CONFIG.contactLead;
+const L = CONFIG.links;
+document.getElementById('contactLinks').innerHTML = [
+  `<a href="mailto:${L.email}">Email</a>`,
+  `<a href="${L.youtube}" target="_blank" rel="noopener">YouTube</a>`,
+  `<a href="${L.instagram}" target="_blank" rel="noopener">Instagram</a>`,
+  `<a href="${L.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`,
+].join('');
+document.getElementById('foot').textContent = `© ${new Date().getFullYear()} ${CONFIG.name}`;
+</script>
+</body>
+</html>
